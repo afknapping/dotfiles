@@ -1,0 +1,4 @@
+google-chrome
+hyper
+keycastr
+visual-studio-code

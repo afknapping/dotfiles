@@ -1,0 +1,6 @@
+
+
+# Save all videos under Movies directory in your home directory
+-o ~/Downloads/uBOX/%(title)s--%(uploader)s--%(id)s.%(ext)s
+
+# List: -o ~/Downloads/youtube-dl/%(playlist_index)s-%(title)s--%(uploader)s--%(playlist)s--%(id)s.%(ext)s

@@ -1,0 +1,41 @@
+[user]
+  name = afknapping
+  email = fabian@afknapping.de
+[alias]
+  ci = commit
+  co = checkout
+  br = branch
+  remotebranches = branch -a -vv -r 
+  sifter = cherry -v --abbrev stable
+  s = !echo '' && git branch -v -vv --color && echo '' && git status -s && echo '' && git diff --stat --color -r && echo ''
+  st = s
+  a = !git add -p && git s
+  aa = !git add -A && git s
+  u = !git ls-files --other --stage --exclude-standard
+  lg = !echo '' && git log -n 15 --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)(%an)%Creset' --abbrev-commit --date=relative && echo '\n'
+  showfiles = show --pretty="format:" --name-only
+  amend = ci --amend --no-edit
+  wrp = commit -m 'Windows™ Recovery Point®'
+  # pullallremotebranches = !git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
+  pullall = !"for b in $(git for-each-ref refs/heads --format='%(refname)') ; do git checkout ${b#refs/heads/} ; git pull --ff-only ; done"
+
+
+[pull]
+  rebase = true
+[core]
+	pager = cat
+
+###################################################### 
+# git branch --all --remote
+# git checkout -b remotenbranch --track
+#
+# git checkout -b newbranch 
+# git push origin newbranch --set-upstream
+# git push -d origin newbranch
+# git branch -d newbranch
+# 
+# git diff --cached
+# 
+# 
+# 
+# 
